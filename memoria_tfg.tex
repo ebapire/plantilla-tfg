@@ -1,0 +1,79 @@
+\documentclass[a4paper, 12pt]{book}
+
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage[utf8]{inputenc} %¡¡NO codificar en latin!!
+\usepackage[spanish]{babel} % Comenta esta línea si tu memoria es en inglés
+\usepackage{url}
+%\usepackage[dvipdfm]{graphicx}
+\usepackage{graphicx}
+\usepackage{float}  %% H para posicionar figuras
+\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
+\usepackage[none]{hyphenat}
+\usepackage{cite}
+\usepackage[pagestyles]{titlesec}
+\usepackage{lipsum}
+\usepackage[bookmarks = true, colorlinks=true, linkcolor = black, citecolor = black, menucolor = black, urlcolor = blue]{hyperref} %para que los enlaces no aparezcan recuadrados en rojo y cambia los colores de los enlaces
+
+%para que el índice llegue hasta subsubsection
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+	\begin{titlepage}
+		\centering
+		\includegraphics[scale=0.5]{img/logo_urjc.jpg}
+		\vspace{3cm}
+		
+		\Large
+		GRADO EN INGENIERÍA EN ------ DE LAS TELECOMUNICACIONES
+		
+		\vspace{0.4cm}
+		
+		\large
+		Curso Académico ----/----
+		
+		\vspace{0.8cm}
+		
+		Trabajo Fin de Grado
+		
+		\vspace{2.5cm}		
+		\LARGE		
+		TÍTULO DEL TRABAJO
+		
+		\vspace{2.5 cm}
+		
+		\large
+		Autor :  \\
+		Tutor : 
+		\afterpage{\null\newpage}
+		\pagestyle{empty}
+	\end{titlepage}
+	
+	\input{dedicatoria}
+	\input{agradecimientos}
+	\input{resumen}
+	
+	\tableofcontents
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	\mainmatter
+
+	\input{introduccion}
+	%cada vez que quieras un capitulo nuevo, 
+	%descomentarlo y crear el archivo .tex	
+%	\input{capitulo1}
+%	\input{capitulo2}
+%	\input{capitulo3}
+%	\input{capitulo4}
+%	\input{capitulo5}
+
+	
+	\bibliographystyle{acm} %para que se muestre la bibliografía
+	\bibliography{bibliografia_tfg.bib}
+	%En la bibliografía no sale nada que no se haya citado antes (se supone que si no lo citas es porque no lo has usado)
+	
+\end{document}
